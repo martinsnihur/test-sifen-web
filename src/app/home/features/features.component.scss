@@ -1,0 +1,559 @@
+@use 'sass:color';
+
+// Variables - using the project's color scheme
+$primary: #2563EB;
+$secondary: #3B82F6;
+$accent: #10B981;
+$neutral: #1F2937;
+$light: #F3F4F6;
+$white: #FFFFFF;
+
+// Mixins for reusable styles
+@mixin card-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+  }
+}
+
+@mixin section-spacing {
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+// Main container styling
+.features-container {
+  @include section-spacing;
+  
+  h2 {
+    color: $neutral;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: linear-gradient(to right, $primary, $accent);
+      border-radius: 2px;
+    }
+  }
+  
+  p.lead {
+    color: color.adjust($neutral, $lightness: 25%);
+    margin-bottom: 2rem;
+  }
+}
+
+// 1. Feature cards and icons
+.feature-card {
+  @include card-shadow;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  border: 1px solid rgba($light, 0.5);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, $primary, $secondary);
+  }
+  
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    
+    &.accent {
+      background-color: rgba($accent, 0.1);
+      color: $accent;
+    }
+    
+    &.secondary {
+      background-color: rgba($secondary, 0.1);
+      color: $secondary;
+    }
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: $neutral;
+  }
+  
+  p {
+    color: color.adjust($neutral, $lightness: 20%);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+// 2. Interactive tabs styles
+.feature-tabs {
+  margin: 2rem 0;
+  border-bottom: 1px solid $light;
+  
+  .nav-link {
+    color: color.adjust($neutral, $lightness: 30%);
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border: none;
+    position: relative;
+    transition: all 0.2s ease;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(to right, $primary, $secondary);
+      transition: width 0.3s ease;
+    }
+    
+    &:hover {
+      color: $neutral;
+      background-color: transparent;
+      
+      &::after {
+        width: 30%;
+      }
+    }
+    
+    &.active {
+      color: $primary;
+      background-color: transparent;
+      font-weight: 600;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.tab-content {
+  padding: 1.5rem 0;
+  
+  .tab-pane {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+}
+
+// 3. Code preview styling
+.code-preview {
+  background-color: $neutral;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  
+  pre {
+    color: $light;
+    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin: 0;
+    overflow-x: auto;
+    
+    code {
+      white-space: pre;
+      word-break: normal;
+      word-wrap: normal;
+    }
+  }
+  
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba($light, 0.2);
+    
+    .code-title {
+      font-size: 0.9rem;
+      color: $light;
+    }
+    
+    .code-actions {
+      display: flex;
+      gap: 0.5rem;
+      
+      button {
+        background-color: transparent;
+        border: none;
+        color: rgba($light, 0.7);
+        font-size: 0.8rem;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background-color: rgba($light, 0.1);
+          color: $light;
+        }
+      }
+    }
+  }
+  
+  .line-numbers {
+    color: rgba($light, 0.4);
+    user-select: none;
+    text-align: right;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right: 1px solid rgba($light, 0.2);
+    display: inline-block;
+  }
+  
+  // Syntax highlighting colors
+  .keyword { color: #ff79c6; }
+  .string { color: #f1fa8c; }
+  .comment { color: #6272a4; }
+  .function { color: #50fa7b; }
+  .variable { color: #bd93f9; }
+  .number { color: #bd93f9; }
+}
+
+// 4. Notification card styles
+.notification-card {
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  
+  &.info {
+    background-color: rgba($primary, 0.1);
+    border-left: 4px solid $primary;
+  }
+  
+  &.success {
+    background-color: rgba($accent, 0.1);
+    border-left: 4px solid $accent;
+  }
+  
+  &.warning {
+    background-color: rgba(#f59e0b, 0.1);
+    border-left: 4px solid #f59e0b;
+  }
+  
+  &.error {
+    background-color: rgba(#ef4444, 0.1);
+    border-left: 4px solid #ef4444;
+  }
+  
+  .notification-icon {
+    color: inherit;
+    font-size: 1.25rem;
+    padding-top: 0.25rem;
+  }
+  
+  .notification-content {
+    flex: 1;
+    
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: currentColor;
+      opacity: 0.8;
+    }
+  }
+  
+  .notification-close {
+    background: none;
+    border: none;
+    color: currentColor;
+    opacity: 0.5;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// 5. Validation and compliance diagram styles
+.validation-diagram {
+  margin: 2rem 0;
+  
+  .diagram-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+  
+  .diagram-step {
+    flex: 1;
+    position: relative;
+    padding: 1.5rem;
+    background-color: $white;
+    border-radius: 8px;
+    border: 1px solid $light;
+    @include card-shadow;
+    
+    &::after {
+      content: '→';
+      position: absolute;
+      top: 50%;
+      right: -1rem;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: $primary;
+      
+      @media (max-width: 767px) {
+        content: '↓';
+        top: auto;
+        bottom: -1.5rem;
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
+    
+    &:last-child::after {
+      display: none;
+    }
+    
+    .step-number {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $primary;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+    
+    h4 {
+      color: $neutral;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: color.adjust($neutral, $lightness: 20%);
+    }
+  }
+  
+  .compliance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba($accent, 0.1);
+    color: $accent;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
+    
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+// 6. Responsive adjustments
+@media (max-width: 991px) {
+  .feature-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .feature-card {
+    padding: 1.25rem;
+  }
+  
+  .code-preview {
+    padding: 1rem;
+    
+    pre {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-tabs {
+    display: flex;
+    overflow-x: auto;
+    
+    .nav-link {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  }
+  
+  .validation-diagram .diagram-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .notification-card {
+    flex-direction: column;
+    
+    .notification-icon {
+      align-self: flex-start;
+    }
+  }
+}
+
+// 7. Animations for enhanced user experience
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($primary, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($primary, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($primary, 0);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.feature-benefit {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  
+  &::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: $accent;
+    font-weight: bold;
+  }
+  
+  &.highlight {
+    background-color: rgba($accent, 0.05);
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    border-radius: 4px;
+    
+    &::before {
+      left: 0.5rem;
+    }
+  }
+}
+
+// API endpoints display
+.endpoint-container {
+  margin: 1.5rem 0;
+  
+  .endpoint {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: rgba($light, 0.5);
+    border-radius: 4px;
+    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.features-section {
+  position: relative;
+  overflow: hidden;
+  
+  .section-title {
+    color: var(--neutral);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    color: var(--neutral-light);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .bg-accent {
+    background-color: #ffffff;
+  }
+}
+

@@ -1,0 +1,198 @@
+@use 'sass:color';
+
+// Contact Section Styles
+.contact-section {
+  background-color: var(--light);
+  
+  .section-title {
+    color: var(--neutral);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      margin: 1rem auto 0;
+    }
+  }
+  
+  .section-subtitle {
+    color: var(--neutral);
+    opacity: 0.8;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// Contact Form Card
+.contact-form-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  height: 100%;
+  
+  h3 {
+    color: var(--neutral);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.75rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+    }
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: var(--neutral);
+  }
+  
+  .form-control, .form-select {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      border-color: var(--primary);
+    }
+  }
+  
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    
+    &:hover {
+      background-color: color.adjust(#2563EB, $lightness: -10%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  
+  .form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .alert {
+    border-radius: 8px;
+    padding: 1rem;
+    
+    .btn-close {
+      padding: 1.25rem;
+    }
+  }
+}
+
+// Contact Info Cards
+.info-card, .map-card, .social-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  
+  h3 {
+    color: var(--neutral);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.75rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+    }
+  }
+}
+
+// Contact Info Items
+.contact-info-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    
+    i {
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+  }
+  
+  .info-content {
+    h5 {
+      color: var(--neutral);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+    }
+    
+    p {
+      color: var(--neutral);
+      opacity: 0.8;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: var(--secondary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Map Placeholder
+.map-placeholder {
+  height: 220px;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('https://via.placeholder.com/600x300/e2e8f0/a0aec0?text=Map+Placeholder');
+  background-size: cover;
+  background-position: center;
+}
+

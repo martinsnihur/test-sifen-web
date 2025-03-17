@@ -1,0 +1,275 @@
+<section class="features-section py-5">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <span class="badge bg-accent text-white mb-3">Features</span>
+        <h2 class="section-title">Powerful SIFEN API Capabilities</h2>
+        <p class="section-subtitle">Discover the technical prowess and benefits that make our API solution stand out</p>
+      </div>
+    </div>
+
+    <!-- Main Benefits Cards -->
+    <div class="row mb-5">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="feature-card">
+          <div class="icon-wrapper primary">
+            <i class="bi bi-lightning-charge-fill"></i>
+          </div>
+          <h3>High Performance</h3>
+          <p>Lightning-fast response times with optimized data processing for high-volume transactions.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="feature-card">
+          <div class="icon-wrapper secondary">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h3>Secure Infrastructure</h3>
+          <p>Enterprise-grade security with encryption, secure authentication, and compliance with industry standards.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="icon-wrapper accent">
+            <i class="bi bi-tools"></i>
+          </div>
+          <h3>Developer Friendly</h3>
+          <p>Comprehensive documentation, SDKs, and developer tools to accelerate your integration process.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Specifications -->
+    <div class="tech-specs mt-5 mb-5" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="tech-content">
+            <h3>Technical Specifications</h3>
+            <p>Our API is built with modern technologies to ensure reliability, scalability, and performance.</p>
+            
+            <div class="specs-list">
+              <div class="spec-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="spec-icon"><i class="bi bi-hdd-network"></i></div>
+                <div class="spec-text">
+                  <h4>RESTful Architecture</h4>
+                  <p>Industry-standard REST API with JSON data format for seamless integration.</p>
+                </div>
+              </div>
+              
+              <div class="spec-item" data-aos="fade-right" data-aos-delay="200">
+                <div class="spec-icon"><i class="bi bi-clock-history"></i></div>
+                <div class="spec-text">
+                  <h4>99.9% Uptime SLA</h4>
+                  <p>Reliable service with comprehensive monitoring and redundant systems.</p>
+                </div>
+              </div>
+              
+              <div class="spec-item" data-aos="fade-right" data-aos-delay="300">
+                <div class="spec-icon"><i class="bi bi-key"></i></div>
+                <div class="spec-text">
+                  <h4>OAuth 2.0 Authentication</h4>
+                  <p>Secure token-based authentication with optional multi-factor authentication.</p>
+                </div>
+              </div>
+              
+              <div class="spec-item" data-aos="fade-right" data-aos-delay="400">
+                <div class="spec-icon"><i class="bi bi-speedometer2"></i></div>
+                <div class="spec-text">
+                  <h4>Rate Limiting & Throttling</h4>
+                  <p>Configurable rate limits based on your subscription plan with transparent headers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="tech-image">
+            <img src="assets/images/api-diagram.svg" alt="Technical diagram" class="img-fluid tech-diagram">
+            <div class="tech-overlay">
+              <div class="badge-wrapper">
+                <span class="badge-tech">REST</span>
+                <span class="badge-tech">JSON</span>
+                <span class="badge-tech">HTTPS</span>
+                <span class="badge-tech">OAuth</span>
+                <span class="badge-tech">TLS 1.3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Features Showcase -->
+    <div class="interactive-features py-4">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h3>Key Capabilities</h3>
+          <p>Explore the powerful features that make our SIFEN API the preferred choice</p>
+        </div>
+      </div>
+      
+      <div class="row features-tabs">
+        <div class="col-md-4">
+          <div class="nav flex-column nav-pills" role="tablist">
+            <button class="nav-link" [class.active]="isActiveTab('integration')" (click)="setActiveTab('integration')" role="tab">
+              <i class="bi bi-plug"></i> Seamless Integration
+            </button>
+            <button class="nav-link" [class.active]="isActiveTab('validation')" (click)="setActiveTab('validation')" role="tab">
+              <i class="bi bi-check-circle"></i> Validation Engine
+            </button>
+            <button class="nav-link" [class.active]="isActiveTab('notifications')" (click)="setActiveTab('notifications')" role="tab">
+              <i class="bi bi-bell"></i> Real-time Notifications
+            </button>
+            <button class="nav-link" [class.active]="isActiveTab('reporting')" (click)="setActiveTab('reporting')" role="tab">
+              <i class="bi bi-graph-up"></i> Advanced Reporting
+            </button>
+            <button class="nav-link" [class.active]="isActiveTab('compliance')" (click)="setActiveTab('compliance')" role="tab">
+              <i class="bi bi-file-earmark-check"></i> Tax Compliance
+            </button>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="tab-content">
+            <div class="tab-pane fade" [class.show]="isActiveTab('integration')" [class.active]="isActiveTab('integration')" role="tabpanel">
+              <div class="feature-content">
+                <h4>Seamless Integration</h4>
+                <p>Connect your systems with ease using our comprehensive API endpoints and detailed documentation.</p>
+                <ul>
+                  <li>Multiple language SDKs (Python, Java, PHP, .NET)</li>
+                  <li>Webhook support for event-driven architecture</li>
+                  <li>Sample applications and code snippets</li>
+                  <li>Flexible authentication options</li>
+                </ul>
+                <div class="code-preview">
+                  <pre><code>{{codeExample}}</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" [class.show]="isActiveTab('validation')" [class.active]="isActiveTab('validation')" role="tabpanel">
+              <div class="feature-content">
+                <h4>Validation Engine</h4>
+                <p>Our intelligent validation engine ensures that all documents meet SIFEN requirements before submission.</p>
+                <ul>
+                  <li>Real-time schema validation</li>
+                  <li>Business rules enforcement</li>
+                  <li>Detailed error messages and suggestions</li>
+                  <li>Pre-validation capabilities</li>
+                </ul>
+                <div class="validation-diagram">
+                  <div class="validation-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Document Submission</div>
+                  </div>
+                  <div class="validation-arrow">→</div>
+                  <div class="validation-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Schema Validation</div>
+                  </div>
+                  <div class="validation-arrow">→</div>
+                  <div class="validation-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Business Rules Check</div>
+                  </div>
+                  <div class="validation-arrow">→</div>
+                  <div class="validation-step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Approval/Feedback</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" [class.show]="isActiveTab('notifications')" [class.active]="isActiveTab('notifications')" role="tabpanel">
+              <div class="feature-content">
+                <h4>Real-time Notifications</h4>
+                <p>Stay informed about the status of your electronic documents with instant notifications.</p>
+                <ul>
+                  <li>Webhook notifications for status changes</li>
+                  <li>Email alerts for critical events</li>
+                  <li>In-app notification center</li>
+                  <li>Customizable notification preferences</li>
+                </ul>
+                <div class="notification-preview">
+                  <div class="notification-card">
+                    <div class="notification-icon success">
+                      <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                    <div class="notification-content">
+                      <h5>Invoice Approved</h5>
+                      <p>Invoice #12345 has been approved by SIFEN</p>
+                      <small>2 minutes ago</small>
+                    </div>
+                  </div>
+                  <div class="notification-card">
+                    <div class="notification-icon warning">
+                      <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+                    <div class="notification-content">
+                      <h5>Validation Warning</h5>
+                      <p>Invoice #12346 has validation warnings</p>
+                      <small>15 minutes ago</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" [class.show]="isActiveTab('reporting')" [class.active]="isActiveTab('reporting')" role="tabpanel">
+              <div class="feature-content">
+                <h4>Advanced Reporting</h4>
+                <p>Gain insights into your electronic invoicing operations with comprehensive reporting tools.</p>
+                <ul>
+                  <li>Customizable dashboard widgets</li>
+                  <li>Exportable reports (CSV, Excel, PDF)</li>
+                  <li>Historical data analysis</li>
+                  <li>Tax compliance reporting</li>
+                </ul>
+                <div class="chart-preview">
+                  <div class="chart-placeholder">
+                    <i class="bi bi-bar-chart-line"></i>
+                    <span>Interactive charts and analytics dashboard</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" [class.show]="isActiveTab('compliance')" [class.active]="isActiveTab('compliance')" role="tabpanel">
+              <div class="feature-content">
+                <h4>Tax Compliance</h4>
+                <p>Ensure your business stays compliant with Paraguay's tax regulations and SIFEN requirements.</p>
+                <ul>
+                  <li>Automatic tax calculations</li>
+                  <li>Compliance with latest SIFEN regulations</li>
+                  <li>Digital signature integration</li>
+                  <li>Audit trail and document history</li>
+                </ul>
+                <div class="compliance-diagram">
+                  <div class="compliance-icon">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                  <div class="compliance-text">
+                    <h5>100% Compliant with SET Regulations</h5>
+                    <p>Our system is regularly updated to meet the latest requirements from Paraguay's tax authority (SET).</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="row mt-5">
+      <div class="col-12 text-center" data-aos="fade-up">
+        <div class="cta-box">
+          <h3>Ready to Experience Our SIFEN API?</h3>
+          <p>Start integrating with our powerful API and transform your electronic invoicing process today.</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary me-3">Get Started <i class="bi bi-arrow-right"></i></a>
+            <a href="#" class="btn btn-outline-primary">View Documentation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Features Component -->

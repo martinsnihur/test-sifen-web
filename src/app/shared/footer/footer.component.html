@@ -1,0 +1,69 @@
+<footer class="bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Company Information -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-4">SIFEN API Service</h5>
+        <p>
+          Providing high-quality REST API services for electronic invoicing with Paraguay's SIFEN system. Simple, efficient, and reliable integration.
+        </p>
+        <p class="mb-3">
+          <i class="bi bi-geo-alt me-2"></i> Asunción, Paraguay
+        </p>
+        <p class="mb-3">
+          <i class="bi bi-envelope me-2"></i> contact&#64;sifenapi.com
+        </p>
+        <p>
+          <i class="bi bi-telephone me-2"></i> +595 981 123456
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-4">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2" *ngFor="let link of quickLinks; let last = last" [class.mb-0]="last">
+            <a [routerLink]="link.url" class="text-light text-decoration-none">
+              <i class="bi bi-chevron-right me-2"></i>{{ link.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="col-lg-5 col-md-12">
+        <h5 class="text-uppercase mb-4">Follow Us</h5>
+        <div class="d-flex">
+          <a *ngFor="let social of socialLinks; let last = last" 
+             [href]="social.url" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-outline-light btn-floating" 
+             [class.me-3]="!last">
+            <i class="bi bi-{{ social.icon }}"></i>
+          </a>
+        </div>
+        
+        <div class="mt-4">
+          <h6 class="text-uppercase mb-3">Subscribe to our newsletter</h6>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Email address" aria-label="Email address" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+            <small class="form-text text-light mt-2">
+              Get updates about our services and promotions.
+            </small>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Copyright -->
+  <div class="text-center py-3 mt-4" style="background-color: rgba(0, 0, 0, 0.2)">
+    <p class="mb-0">
+      © {{ currentYear }} SIFEN API Service. All rights reserved.
+    </p>
+  </div>
+</footer>
