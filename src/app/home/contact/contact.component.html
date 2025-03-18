@@ -61,7 +61,8 @@
               <input 
                 type="email" 
                 class="form-control" 
-                id="email" 
+                id="email"
+                autocomplete="on" 
                 formControlName="email"
                 [ngClass]="{'is-invalid': submitted && f['email'].errors}"
               >
@@ -73,7 +74,7 @@
             
             <div class="mb-3">
               <label for="company" class="form-label">Company</label>
-              <input type="text" class="form-control" id="company" formControlName="company">
+              <input autocomplete="on" type="text" class="form-control" id="company" formControlName="company">
             </div>
             
             <div class="mb-3">
